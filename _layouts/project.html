@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+    {% include head.html %}
+
+    <body>
+
+        {% include header.html %}
+
+        <div class="page-content project-content" aria-label="Content">
+            <div class="wrapper">
+
+
+                <div class="sidebar">
+                    <img id="project-image" src="{{ site.baseurl }}/assets/{{ site.image_path }}/{{ page.image }}">                    
+                </div>
+
+                <main class="project">
+                    <section id="contact-content">
+                        <h6>Case Study</h6>
+                        <h1 id="project-title">{{ page.title }}</h1>
+
+                        {{ content }}
+
+                    </section>
+
+                </main>
+
+            </div>
+        </div>
+
+        {% include footer.html %}
+
+    </body>
+
+</html>

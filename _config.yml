@@ -24,9 +24,15 @@ twitter_username: bekahdavid
 
 # Build settings
 markdown: kramdown
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
