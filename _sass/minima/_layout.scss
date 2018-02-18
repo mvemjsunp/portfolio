@@ -186,11 +186,13 @@
   @include relative-font-size(2);
 }
 
-.post-list-heading {
+.post-list-heading,
+.project-list-heading {
   @include relative-font-size(1.75);
 }
 
-.post-list {
+.post-list,
+.project-list {
   margin-left: 0;
   list-style: none;
 
@@ -205,10 +207,40 @@
 }
 
 .post-link {
-  display: block;
+  margin-bottom: 0;
   @include relative-font-size(1.5);
 }
 
+.project-list {
+  li {
+    margin-bottom: $spacing-unit / 2;
+  }
+  h3 {
+    margin-bottom: 0;
+    @include relative-font-size(1.5);
+  }
+}
+
+.project-link {
+  display: flex;
+  border: 1px solid $grey-color-super-light;
+  &:hover {
+    border-color: $grey-color-light;
+    text-decoration: none;
+    background-color: #fff;
+  }
+}
+
+
+.project-list-image {
+  flex: 0 1 30%;
+
+}
+
+.project-list-content {
+  flex: 0 1 65%;
+  padding: $spacing-unit;
+}
 
 
 /**
@@ -272,6 +304,7 @@
     max-width:         calc((#{$content-width} + (#{$spacing-unit} * 2)) * .3);
     position: fixed;
     height: 100%;
+    top: 250px;
   }
 
   .project {
@@ -281,9 +314,49 @@
     position: relative;
     padding-left: $spacing-unit;
   }
+
+  h6, #project-title {
+    background-color: $background-color;
+    display: inline-block;
+    padding: 0 .25em;
+  }
+
+  #project-title {
+    padding-left: .15em;
+    padding-bottom: 1em;
+  }
 }
 
  .project-image {
    width: 40rem;
    margin: 0 auto;
+ }
+
+ // background image full width in header area
+ .project-header {
+  height: 150px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 2em;
+  margin-top: -30px;
+  position: absolute;
+ }
+
+ .project-image-inline {
+  border-bottom: 1px solid $grey-color-super-light;
+  padding: 1em 0;
+  margin: 1.5em 0;
+  .caption {
+    margin-top: .5em;
+    padding-top: 1em;
+  }
+ }
+
+ .caption {
+  font-size: $small-font-size * .9;
+  font-style: italic;
+  color: $grey-color;
+  line-height: 1.2em;
+  font-family: $heading-font-family;
  }

@@ -4,15 +4,20 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## Hi, I'm Rebekah David.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+I’m a resourceful, focused, forward-looking (yet detail-obsessive) UX Designer skilled at sketching, wireframing, user flows, and developing and enforcing design standards using pattern libraries and other tools.  I am experienced at collaborating with developers, stakeholders, and users to build truly successful and delightful products.  
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I’ve been working as a “UX team-of-one”/full-stack designer at a boutique environmental data management software company for the past five years.  There, I have worn many hats (UI designer, front-end developer, copywriter, manager…), but during this time I’ve become the most passionate about my work in UX design.
 
+I love **solving complex interaction problems** and designing software solutions that **help users do their jobs better**.  I get really excited about understanding who our users are, what they want or need, and removing obstacles between them and their goals.
 
-[jekyll-organization]: https://github.com/jekyll
+Now my intention is to focus even more intensely on UX design in a new role, learning new techniques and tools, and generally honing my skills.  I would love to join a moderate to large in-house team that already has dedicated research and design roles, so that I have peers to continually learn from and collaborate with.
+
+I want to work on **challenging, high-impact projects** in a design-mature organization in the **enterprise software or government space**, as part of a diverse team empowered to use design thinking to solve complex problems.
+
+---
+
+Before discovering my passion for interaction design and UX, I studied nutrition and sociology in college.  I also spent about 12 years working in the service industry (an experience I try to recommend to any young person) in hotels, restaurants, and video stores.
+
+In my spare time, I like playing <a href="https://stardewvalley.net/" target="_blank">simulation</a> and <a href="http://store.steampowered.com/app/57690/Tropico_4/" target="_blank">city-building</a> videogames, listening to podcasts about <a href="https://userdefenders.com/" target="_blank">design</a>, <a href="http://www.radiolab.org/" target="_blank">science</a>, <a href="https://99percentinvisible.org/" target="_blank">and</a> <a href="https://www.gimletmedia.com/reply-all" target="_blank">technology</a>, and <a href="https://instagram.com/{{ site.instagram_username| cgi_escape | escape }}" target="_blank">Instagramming vegan food</a>.

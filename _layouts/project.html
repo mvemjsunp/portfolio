@@ -8,6 +8,7 @@
         {% include header.html %}
 
         <div class="page-content project-content" aria-label="Content">
+            <div class="project-header" style="background-image:url('{{ site.baseurl }}/assets/{{ site.image_path }}/{{ page.header-image }}')"></div>
             <div class="wrapper">
 
 
@@ -30,6 +31,21 @@
         </div>
 
         {% include footer.html %}
+
+        <script src="{{ "/assets/js/ideal-image-slider/ideal-image-slider.min.js" | relative_url }}"></script>
+        <script src="{{ "/assets/js/ideal-image-slider/extensions/bullet-nav/iis-bullet-nav.js" | relative_url }}"></script>
+        <script src="{{ "/assets/js/ideal-image-slider/extensions/captions/iis-captions.js" | relative_url }}"></script>
+
+        <!-- Sliders on pages -->
+        {% for script in page.iis_slider_scripts %}
+            {{ script }}
+        {% endfor %}
+        <!-- Sliders on indexes -->
+        {% for post in paginator.posts %}
+            {% for script in post.iis_slider_scripts %}
+                {{ script }}
+            {% endfor %}
+        {% endfor %}
 
     </body>
 

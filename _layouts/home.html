@@ -32,23 +32,41 @@ layout: default
   {% endif %} -->
 
   {% if site.projects.size > 0 %}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Projects" }}</h2>
-    <ul class="post-list">
+    <h2 class="project-list-heading">{{ page.list_title | default: "Projects" }}</h2>
+    <ul class="project-list">
       {% for project in site.projects %}
       <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ project.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ project.url | relative_url }}">
-            {{ project.title | escape }}
-          </a>
-        </h3>
-        <!-- {% if site.show_excerpts %}
-          {{ post.excerpt }}
-        {% endif %} -->
+        <a class="project-link" href="{{ project.url | relative_url }}">
+          <!-- {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %} -->
+          <!-- <span class="post-meta">{{ project.date | date: date_format }}</span> -->
+          <div class="project-list-image">
+              <img src="{{ site.baseurl }}/assets/{{ site.image_path }}/{{ project.image }}">
+          </div>
+          <div class="project-list-content">
+            <h3>
+                {{ project.title | escape }}
+            </h3>
+            <span class="post-meta">{{ project.summary }}</span> 
+            <!-- {% if site.show_excerpts %}
+              {{ post.excerpt }}
+            {% endif %} -->
+          </div>
+        </a>
       </li>
       {% endfor %}
     </ul>
   {% endif %}
+
+  <h2 class="project-list-heading">{{ page.list_title | default: "Just for fun" }}</h2>
+    <ul>
+      <li>Hands of Chance</li>
+      <li>Network</li>
+      <li>Never Win</li>
+      <li>Novum Essentia</li>
+      <li>PARI</li>
+      <li>PERSONify</li>
+      <li>SpectraView</li>
+      <li>Tunnel Vision</li>
+    </ul>
 
 </div>
