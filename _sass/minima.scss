@@ -4,7 +4,7 @@
 
 $base-font-family: "calluna", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $heading-font-family: "lato", serif !default;
-$base-font-size:   16px !default;
+$base-font-size:   18px !default;
 $base-font-weight: 300 !default;
 $heading-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -12,9 +12,21 @@ $base-line-height: 1.5 !default;
 
 $spacing-unit:     30px !default;
 
-$text-color:       #111 !default;
+$text-color:       #212121 !default;
 $background-color: #fdfdfd !default;
-$brand-color:      #2a7ae2 !default;
+
+/* blue/red */
+$brand-color:      #00BCD4 !default; //31a1d6
+$brand-color-dark: #0097A7 !default;
+$brand-color-light: #B2EBF2 !default;
+$accent-color:     #FF5252 !default;
+/* teal/red */
+// $brand-color:      #009688 !default;
+// $brand-color-dark: #00796B !default;
+// $brand-color-light: #B2DFDB !default;
+// $accent-color:     #FF5252 !default;
+
+// $brand-color:      #2a7ae2 !default;
 
 $grey-color:       #828282 !default;
 $grey-color-super-light: lighten($grey-color, 40%) !default;
@@ -28,6 +40,14 @@ $content-width:    800px !default;
 
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
+
+//from simple-grid
+
+$width: 96%;
+$gutter: 4%;
+$breakpoint-small: 33.75em; // 540px
+$breakpoint-med: 45em; // 720px
+$breakpoint-large: 60em; // 960px
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -44,6 +64,115 @@ $on-laptop:        800px !default;
 
 @mixin relative-font-size($ratio) {
   font-size: $base-font-size * $ratio;
+}
+
+// mixin
+@mixin angle($pseudo, $flip: false, $angle: 1.5deg) {
+  // Possible values for $pseudo are: before, after, both
+  @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
+    position: relative;
+    z-index: 1;
+    $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
+
+    #{$selector} {
+      background: inherit;
+      content: '';
+      display: block;
+      height: 50%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      -webkit-backface-visibility: hidden; // for Chrome Windows
+    }
+
+    @if $pseudo == 'before' {
+      #{$selector} {
+        top: 0;
+
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+    }
+
+    @if $pseudo == 'after' {
+      #{$selector} {
+        bottom: 0;
+
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 100%;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+
+    @if $pseudo == 'both' {
+      &:before {
+        top: 0;
+
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+
+      &:after {
+        bottom: 0;
+
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+  }
+}
+
+// slanted edges here
+.edge--bottom {
+  @include angle(after);
+}
+
+.edge--bottom--reverse {
+  @include angle(after, true);
+}
+
+.edge--top {
+  @include angle(before);
+}
+
+.edge--top--reverse {
+  @include angle(before, true);
+}
+
+.edge--both {
+  @include angle(both);
+}
+
+.edge--both--reverse {
+  @include angle(both, true);
+}
+
+.brand-bg {
+  background-color: $brand-color;
+}
+
+.light-bg {
+  background-color: $brand-color-light;
 }
 
 // Import partials.

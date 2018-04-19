@@ -9,26 +9,79 @@
 
         <div class="page-content project-content" aria-label="Content">
             <div class="project-header" style="background-image:url('{{ site.baseurl }}/assets/{{ site.image_path }}/{{ page.header-image }}')"></div>
-            <div class="wrapper">
-
-
-                <div class="sidebar">
-                    <img id="project-image" src="{{ site.baseurl }}/assets/{{ site.image_path }}/{{ page.image }}">                    
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h6>Case Study</h6>
+                    </div>
                 </div>
+            </div>
 
+            <div id="project-title" class="edge--both--reverse light-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>{{ page.title }}</h1>
+                        </div><!--/col-->
+                    </div><!--/row-->
+                </div><!--/container-->
+            </div>
+                
+
+            <div class="container">
+
+                    
+                    <!-- <div class="col-1 hidden-sm">
+                        <div class="sidebar">
+                            <img id="project-image" src="{{ site.baseurl }}/assets/{{ site.image_path }}/{{ page.image }}">                    
+                        </div>
+                    </div> -->
                 <main class="project">
                     <section id="contact-content">
-                        <h6>Case Study</h6>
-                        <h1 id="project-title">{{ page.title }}</h1>
-
+                        
                         {{ content }}
 
                     </section>
 
                 </main>
 
-            </div>
-        </div>
+            </div><!--/container-->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Other projects</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="other-projects">
+                            {% for project in site.projects limit:4 %}
+                                {% unless page.id == project.id %}
+                            
+                                    <a class="project-link" href="{{ project.url | relative_url }}">
+                                        <div class="project-list-image">
+                                            <img src="{{ site.baseurl }}/assets/{{ site.image_path }}/{{ project.image }}">
+                                        </div>
+                                        <div class="project-list-content">
+                                            <h3>
+                                                {{ project.title | escape }}
+                                            </h3>
+                                        </div>
+                                    </a>
+                                {% endunless%}
+                            {% endfor %}
+                        </div><!--/other-projects-->
+
+                        <div class="home-link">
+                            &#8592 <a href="{{ "/" | relative_url }}">Back to home</a>
+                        </div>
+
+                    </div><!--/col-12-->
+                </div><!--/row-->
+                
+            </div><!--/container-->
 
         {% include footer.html %}
 
@@ -38,14 +91,14 @@
 
         <!-- Sliders on pages -->
         {% for script in page.iis_slider_scripts %}
-            {{ script }}
+                {{ script }}
         {% endfor %}
         <!-- Sliders on indexes -->
-        {% for post in paginator.posts %}
+        <!-- {% for post in paginator.posts %}
             {% for script in post.iis_slider_scripts %}
                 {{ script }}
             {% endfor %}
-        {% endfor %}
+        {% endfor %} -->
 
     </body>
 

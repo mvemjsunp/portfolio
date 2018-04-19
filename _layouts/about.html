@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+    {% include head.html %}
+
+    <body>
+
+        {% include header.html %}
+
+        <div class="row" aria-label="Content">
+            <div id="about-sidebar" class="hidden-sm" style="background-image:url('{{ site.baseurl }}/assets/{{ page.sidebar-image }}')"></div>
+            <div class="container">
+
+                <div class="row">
+                    
+                    <div class="col-4">
+                        <img id="self-image" src="{{ site.baseurl }}/assets/{{ page.personal-image }}">                    
+                    </div><!--/col-3-->
+
+                    <div class="col-8">
+                        <main>
+                                {{ content }}
+                        </main>
+                    </div><!--/col-9-->
+
+                </div>
+            </div><!--/container-->
+        </div><!--/row-->
+
+        {% include footer.html %}
+
+    </body> 
+
+</html>

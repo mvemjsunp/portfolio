@@ -1,0 +1,25 @@
+<div class="row icon-list {{ include.extraClasses }}">
+    <div class="col-1 col-2-sm">
+        <img class="hover-icon" src="/assets/icons/accent-2x/{{ include.icon }}@2x.png" alt="{{ include.title }}">
+    </div>
+    <div class="col-11 col-10-sm">
+        <h3>{{ include.title }} </h3>
+        <span>{{ include.summary }}</span>
+    </div>
+</div><!--/row-->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.hover-icon').each(function() {
+            var iconImg = $(this);
+            var currentImage = iconImg.attr('src');
+            var rowParent = $(this).closest('.row');
+            rowParent.on('mouseover', function() {
+                iconImg.attr('src', currentImage.replace('@2x', '_hover@2x'));
+            });
+            rowParent.on('mouseout', function() {
+                iconImg.attr('src', currentImage);
+            });
+        });
+    });
+</script>

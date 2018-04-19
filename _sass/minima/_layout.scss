@@ -2,12 +2,41 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
+  border-top: 5px solid $brand-color-light;
+  // border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
   position: relative;
+  #homepage & {
+    border-bottom: none;
+  }
+  + * {
+    margin-top: $spacing-unit * 2.5;
+  }
+
+  padding-top: 0px;
+  padding-bottom: 10px;
+  padding-right: 5%;
+  background-color: #fdfdfd;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  transition: top 0.3s ease-in-out;
+  width: 100%;
+  z-index: 3;
+  &.border {
+    border-bottom: $grey-color-super-light solid thin;
+  }
+  @include media-query($on-palm) {
+    z-index: 6;
+  }
+
+}
+
+.nav-up {
+  top: -80px;
 }
 
 .site-title {
@@ -22,6 +51,10 @@
   &,
   &:visited {
     color: $grey-color;
+  }
+
+  #homepage & {
+    display: none;
   }
 }
 
@@ -42,17 +75,30 @@
   .page-link {
     color: $text-color;
     line-height: $base-line-height;
-
+    padding-bottom: .25em;
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 20px;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $accent-color;
+      border-bottom: 2px solid $accent-color;
+    }
+    &.active {
+      color: $brand-color;
+      border-bottom: 2px solid $brand-color;
+      &:hover {
+        color: $brand-color-light;
+        border-bottom-color: $brand-color-light;
+      }
     }
   }
 
   @include media-query($on-palm) {
     position: absolute;
     top: 9px;
-    right: $spacing-unit / 2;
+    right: $spacing-unit;
     background-color: $background-color;
     border: 1px solid $grey-color-light;
     border-radius: 5px;
@@ -111,6 +157,9 @@
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
+  #homepage & {
+    border-top: none;
+  }
 }
 
 .footer-heading {
@@ -122,6 +171,12 @@
 .social-media-list {
   list-style: none;
   margin-left: 0;
+}
+
+.social-media-list {
+  li {
+    display: inline-block;
+  }
 }
 
 .footer-col-wrapper {
@@ -178,8 +233,15 @@
 /**
  * Page content
  */
+
+ main {
+   ul li {
+     margin-bottom: .5em;
+   }
+ }
 .page-content {
   padding: $spacing-unit 0;
+  overflow-x: hidden;
 }
 
 .page-heading {
@@ -213,33 +275,56 @@
 
 .project-list {
   li {
-    margin-bottom: $spacing-unit / 2;
+    margin-bottom: $spacing-unit;
+    @include media-query($on-palm) {
+      margin-bottom: $spacing-unit * 2;
+    }
   }
   h3 {
     margin-bottom: 0;
     @include relative-font-size(1.5);
   }
+  a {
+    border-bottom: none;
+  }
 }
 
 .project-link {
   display: flex;
-  border: 1px solid $grey-color-super-light;
+  border-top: 2px solid $grey-color-super-light;
+  border-left: 16px solid $grey-color-super-light;
   &:hover {
     border-color: $grey-color-light;
+    border-color: $brand-color-light;
     text-decoration: none;
-    background-color: #fff;
+    h3 {
+      color: $brand-color;
+    }
+    .post-meta {
+      color: $grey-color-dark;
+    }
+  }
+  @include media-query($on-palm) {
+    display: block;
+    border-top: none;
+    border-bottom: 2px solid $grey-color-super-light;
   }
 }
 
 
 .project-list-image {
   flex: 0 1 30%;
-
+  display: flex;
+  align-items: center;
 }
 
 .project-list-content {
   flex: 0 1 65%;
   padding: $spacing-unit;
+  @include media-query($on-palm) {
+    padding-top: $spacing-unit / 2;
+    padding-bottom: $spacing-unit / 2;
+  }
 }
 
 
@@ -290,6 +375,57 @@
 
 
 /**
+ * Homepage
+ */
+
+#homepage {
+  h2 {
+    border-top: none;
+  }
+  section {
+    margin-bottom: $spacing-unit * 1.5;
+  }
+}
+
+#homepage-intro {
+  font-family: $heading-font-family;
+  
+  @media only screen and (min-width: $breakpoint-large) {
+    font-size: $base-font-size * 1.4;
+  }
+  h1 {
+    color: #fff;
+    font-weight: $base-font-weight;
+    font-size: $base-font-size * 3.2;
+  }
+  p {
+    color: #fff;
+    margin-bottom: $spacing-unit;
+    font-weight: $base-font-weight; 
+    font-size: $base-font-size * 1.2;
+  }
+}
+
+#homepage-intro-bg {
+  position: absolute;
+  width: 40%;
+  right: 5px;
+  top: 5px;
+  height: 98%;
+  background-position: right;
+  // background-image: url(/assets/about/japanese-garden-cyan-flip.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#skills {
+  h3 {
+    margin-bottom: 0;
+  }
+}
+
+
+/**
  * Projects
  */
 
@@ -299,20 +435,36 @@
   //   max-width:         calc(#{$content-width} + (#{$spacing-unit} * 6));
   // }
 
+
   .sidebar {
-    max-width: -webkit-calc((#{$content-width} + (#{$spacing-unit} * 2)) * .3);
-    max-width:         calc((#{$content-width} + (#{$spacing-unit} * 2)) * .3);
-    position: fixed;
-    height: 100%;
-    top: 250px;
+    // position: fixed;
+    position: relative;
+    top: 150px;
+  }
+
+  h4 {
+    margin-bottom: 0;
+    border-left: 6px solid $brand-color;
+    padding-left: $spacing-unit / 3;
+    + p {
+      margin-left: $spacing-unit / 2;
+    }
+  }
+
+  h6 {
+    color: $accent-color;
+    border-bottom-color: $accent-color;
   }
 
   .project {
-    max-width: -webkit-calc((#{$content-width} + (#{$spacing-unit} * 2)) * .7 - #{$spacing-unit});
-    max-width:         calc((#{$content-width} + (#{$spacing-unit} * 2)) * .7 - #{$spacing-unit});
-    left: -webkit-calc((#{$content-width} + (#{$spacing-unit} * 2)) * .3);
     position: relative;
-    padding-left: $spacing-unit;
+    // padding-left: $spacing-unit;
+    .iis-bullet-nav {
+      a.iis-bullet-active,
+      a:hover { 
+        background: $accent-color; 
+      }
+    }
   }
 
   h6, #project-title {
@@ -322,8 +474,87 @@
   }
 
   #project-title {
-    padding-left: .15em;
-    padding-bottom: 1em;
+    // padding-left: .15em;
+    // padding-bottom: 1em;
+    // display: block;
+    /* test for angled header */
+    margin-right: -10em;
+    padding-left: 10em;
+    padding-right: 10em;
+    margin-left: -10em;
+    margin-top: $spacing-unit;
+    margin-bottom: $spacing-unit * 2;
+    display: block;
+    background-color: $brand-color-light;
+  }
+
+  #project-intro {
+    font-size: $base-font-size * 1.3;
+    //font-family: $heading-font-family;
+    font-weight: 300; 
+    @media only screen and (min-width: $breakpoint-large) {
+      font-size: $base-font-size * 1.6;
+    }
+    p {
+      margin-bottom: $spacing-unit;
+    }
+  }
+
+  #project-attributes {
+    h2 {
+      border-top: none;
+      margin-top: initial;
+    }
+    [class^="col"] {
+      border-top: 2px solid $accent-color;
+    }
+  }
+
+  .icon-list {
+    display: flex;
+    align-items: top;
+    h3 { 
+      margin-bottom: 0;
+    }
+    &.last {
+      margin-bottom: $spacing-unit;
+    }
+  }
+
+  table {
+    th {
+      background-color: transparent;
+      border-color: transparent;
+      border-bottom: 6px solid $brand-color-light;
+      font-weight: normal;
+      color: $brand-color;
+      font-family: $heading-font-family;
+      font-size: 1.1em;
+      padding-bottom: 5px;
+    }
+    td {
+      border-color: transparent;
+      &:first-child {
+        border-left: 6px solid $brand-color-light;
+      }
+    }
+    tr:nth-child(even) {
+      background-color: $grey-color-super-light;
+    }
+  }
+}
+
+.role-list ul {
+  margin-left:0;
+  li {
+    display: inline-block;
+    padding: 3px 12px;
+    margin: 0 3px 6px 0;
+    border: 2px solid $brand-color-light;
+    border-radius: 10px;
+    font-family: $heading-font-family;
+    font-weight: 400;
+    font-size: $small-font-size;
   }
 }
 
@@ -337,26 +568,131 @@
   height: 150px;
   width: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: left;
   margin-bottom: 2em;
   margin-top: -30px;
   position: absolute;
- }
-
- .project-image-inline {
-  border-bottom: 1px solid $grey-color-super-light;
-  padding: 1em 0;
-  margin: 1.5em 0;
-  .caption {
-    margin-top: .5em;
-    padding-top: 1em;
+  + div {
+    margin-top: $spacing-unit;
   }
  }
 
- .caption {
+
+ .project-image-inline {
+    padding: 1em 0;
+    .caption {
+      margin-top: 1em;
+    }
+    + .project-image-inline {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    h5 {
+      border-bottom: 6px solid $brand-color-light;
+      display: inline-block;
+      font-size: inherit;
+    }
+    img + .row {
+      padding-top: $spacing-unit / 2;
+    }
+    img ~ .row {
+      background-color: #fafafa;
+      border-left: 2px solid $accent-color;
+      &:last-of-type {
+        padding-bottom: $spacing-unit / 2;
+      }
+    }
+    .num-label {
+      border: 2px solid $accent-color;
+      border-radius: 50%;
+      color: $accent-color;
+      font-size: 1em;
+      font-family: $heading-font-family;
+      display: inline-block;
+      width: 24px;
+      line-height: 24px;
+      font-weight: 400;
+      text-align: center;
+    }
+    .label-text {
+      font-size: $small-font-size;
+      font-family: $heading-font-family;
+      font-weight: 400;
+    }
+}
+ 
+.project-image-inline,
+.ideal-image-slider {
+  max-width: 85%;
+  margin: 1.5em auto;
+  &.full-width {
+    max-width: 100%;
+  }
+}
+
+
+ .caption,
+ .iis-caption {
   font-size: $small-font-size * .9;
   font-style: italic;
   color: $grey-color;
   line-height: 1.2em;
   font-family: $heading-font-family;
+  background: transparent;
+ }
+
+ //quick nav to other sections at bottom of page
+.other-projects {
+  display: flex;
+  margin-bottom: $spacing-unit;
+  .project-link {
+    display: inline-block;
+    flex: 1 0; //1 0 25%
+    border: 1px solid $grey-color-super-light;
+    border-top-width: 16px;
+    padding: $spacing-unit / 4;
+    margin: $spacing-unit / 2;
+    &:hover {
+      border-color: $brand-color-light;
+    }
+  }
+  .project-list-image {
+    height: $spacing-unit * 5; //150px
+    flex: none;
+    overflow: hidden;
+  }
+  .project-list-content {
+    flex: unset;
+    display: block;
+    width: 100%;
+    padding: ($spacing-unit / 2) 0;
+    h3 {
+      padding: 0 ($spacing-unit / 6);
+    }
+  }
+}
+
+.home-link {
+  text-align: center;
+  margin-bottom: $spacing-unit;
+}
+
+
+
+
+
+/**
+ * About page
+ */
+
+
+ #about-sidebar {
+  height: 96%;
+  width: 30%;
+  position: absolute;
+  top: 4%;
+  left: 0;
+  opacity: .4;
+  background-size: cover;
+  background-position: left;
  }

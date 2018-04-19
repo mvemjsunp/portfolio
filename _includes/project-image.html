@@ -1,4 +1,56 @@
- <div class="project-image-inline">
-    <img src="/assets/{{ include.file }}" alt="{{ include.description }}">  
+<div class="project-image-inline {{ include.extraClasses }}">
+    {% if include.intro %}
+    <p>{{ include.intro }}</p>
+    {% endif %}
+    {% if include.title %}
+    <h5>{{ include.title }}</h5>
+    {% endif %}
+    <img src="/assets/{{ include.file }}" alt="{{ include.description }}">
+    {% if include.label1 %}
+    <div class="row">
+
+                <div class="col-1 col-2-sm right-align">
+                    <div class="num-label">1</div>
+                </div>
+                <div class="col-5 col-10-sm">
+                    <div class="label-text">{{ include.label1 }}</div>
+                </div>
+
+        {% if include.label2 %}
+
+                <div class="col-1 col-2-sm right-align">
+                    <div class="num-label">2</div>
+                </div>
+                <div class="col-5 col-10-sm">
+                    <div class="label-text">{{ include.label2 }}</div>
+                </div>
+
+        {% endif %}
+    </div><!--/row-->
+    {% endif %}
+    {% if include.label3 %}
+
+            <div class="row">
+                <div class="col-1 col-2-sm right-align">
+                    <div class="num-label">3</div>
+                </div>
+                <div class="col-5 col-10-sm">
+                    <div class="label-text">{{ include.label3 }}</div>
+                </div>
+
+        {% if include.label4 %}
+
+                    <div class="col-1 col-2-sm right-align">
+                        <div class="num-label">4</div>
+                    </div>
+                    <div class="col-5 col-10-sm">
+                        <div class="label-text">{{ include.label4 }}</div>
+                    </div>
+
+        {% endif %}
+    </div><!--/row-->
+    {% endif %}
+    {% if include.description %}
     <div class="caption">{{ include.description }}</div>
+    {% endif %}
 </div>

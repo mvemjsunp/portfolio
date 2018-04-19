@@ -1,72 +1,137 @@
 ---
-layout: default
+<!-- layout: default -->
 ---
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-<div class="home">
-  {% if page.title %}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {% endif %}
+  {% include head.html %}
 
-  {{ content }}
+  <body id="homepage">
 
-  <!-- {% if site.posts.size > 0 %}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {% if site.show_excerpts %}
-          {{ post.excerpt }}
+    {% include header.html %}
+
+    <main class="page-content" aria-label="Content">
+
+      <div class="home">
+
+          <section id="homepage-intro" class="brand-bg edge--both">
+
+              <div class="hidden-sm" id="homepage-intro-bg" style="background-image: url('{{ site.baseurl }}/assets/about/japanese-garden-cyan-flip.jpg')">
+                &nbsp;
+              </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12-sm col-7">
+                  
+                      <h1>Rebekah David</h1>
+                    {{ content }}
+
+                </div><!--/col-->
+              </div><!--/row-->
+            </div><!--/container-->
+            
+          </section>
+        <!-- {{ content }} -->
+
+        <!-- {% if site.posts.size > 0 %}
+          <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+          <ul class="post-list">
+            {% for post in site.posts %}
+            <li>
+              {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+              <span class="post-meta">{{ post.date | date: date_format }}</span>
+              <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                  {{ post.title | escape }}
+                </a>
+              </h3>
+              {% if site.show_excerpts %}
+                {{ post.excerpt }}
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+
+          <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+        {% endif %} -->
+
+        {% if site.projects.size > 0 %}
+        <section>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+
+                <h2 class="project-list-heading" id="work">{{ page.list_title | default: "Projects" }}</h2>
+                <ul class="project-list">
+                  {% for project in site.projects %}
+                  <li>
+                    <a class="project-link" href="{{ project.url | relative_url }}">
+                      <!-- {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %} -->
+                      <!-- <span class="post-meta">{{ project.date | date: date_format }}</span> -->
+                      <div class="project-list-image">
+                          <img src="{{ site.baseurl }}/assets/{{ site.image_path }}/{{ project.image }}">
+                      </div>
+                      <div class="project-list-content">
+                        <h3>
+                            {{ project.title | escape }}
+                        </h3>
+                        <span class="post-meta">{{ project.summary }}</span> 
+                        <!-- {% if site.show_excerpts %}
+                          {{ post.excerpt }}
+                        {% endif %} -->
+                      </div>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+
+              </div><!--/col-->
+            </div><!--/row-->
+          </div><!--/container-->
+        </section>
         {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {% endif %} -->
+        <section id="skills">
+          <div class="container">
+            <h2 class="project-list-heading">Skills & experience</h2>
+            <div class="row">
+              {% for skill in site.skills %}
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-2-sm">
+                    <img src="{{ site.baseurl }}/assets/icons/accent-2x/{{ skill.icon }}">
+                  </div>
+                  <div class="col-10-sm">
+                    <h3>{{ skill.title }} </h3>
+                    <span class="post-meta">{{ skill.summary }}</span>
+                  </div>
+                </div><!--/row-->
+              </div><!--/col-->
+              {% endfor %}
+            </div><!--/row-->
+          </div><!--/container-->
+        </section>
 
-  {% if site.projects.size > 0 %}
-    <h2 class="project-list-heading">{{ page.list_title | default: "Projects" }}</h2>
-    <ul class="project-list">
-      {% for project in site.projects %}
-      <li>
-        <a class="project-link" href="{{ project.url | relative_url }}">
-          <!-- {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %} -->
-          <!-- <span class="post-meta">{{ project.date | date: date_format }}</span> -->
-          <div class="project-list-image">
-              <img src="{{ site.baseurl }}/assets/{{ site.image_path }}/{{ project.image }}">
-          </div>
-          <div class="project-list-content">
-            <h3>
-                {{ project.title | escape }}
-            </h3>
-            <span class="post-meta">{{ project.summary }}</span> 
-            <!-- {% if site.show_excerpts %}
-              {{ post.excerpt }}
-            {% endif %} -->
-          </div>
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+        <section class="light-bg edge--both--reverse">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
 
-  <h2 class="project-list-heading">{{ page.list_title | default: "Just for fun" }}</h2>
-    <ul>
-      <li>Hands of Chance</li>
-      <li>Network</li>
-      <li>Never Win</li>
-      <li>Novum Essentia</li>
-      <li>PARI</li>
-      <li>PERSONify</li>
-      <li>SpectraView</li>
-      <li>Tunnel Vision</li>
-    </ul>
+                <h2 class="project-list-heading">{{ page.list_title | default: "Just for fun" }}</h2>
+                <a class="page-link" href="{{ "/creative" | relative_url }}">Creative projects</a>
 
-</div>
+              </div><!--/col-12-->
+            </div><!--/row-->
+          </div><!--/container-->
+        </section>
+
+      </div><!--/home-->
+
+
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

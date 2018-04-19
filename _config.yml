@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: rebekah david
+title: Rebekah David
 email: hello@rebekahdavid.com
 description: >- # this means to ignore newlines until "baseurl:"
-  portfolio site for rebekah david | UX & interaction designer
+  portfolio site for Rebekah David | UX & interaction designer
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: bekahdavid
@@ -30,9 +30,10 @@ github_username: mvemjsunp
 markdown: kramdown
 
 # # nav links
-# header_pages:
-#   - about.md
-#   - index.md
+header_pages:
+  - index.md
+  - creative.md
+  - about.md
 
 # theme: minima
 plugins:
@@ -45,6 +46,11 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  skills:
+    output: true
+  creative:
+    output: true
+    permalink: /creative/:path/
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

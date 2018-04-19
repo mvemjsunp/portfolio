@@ -36,14 +36,16 @@
 			transition: 0.3s ease-out;
 }
 .iis-previous-nav {
-	left: 5%;
+	left: 0;
 	background-position: 35% 50%;
 	background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8Zz4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPHBvbHlnb24gZmlsbD0iI2ZmZmZmZiIgaWQ9InN2Z18xIiBwb2ludHM9IjM1MiwxMTUuNCAzMzEuMyw5NiAxNjAsMjU2IDMzMS4zLDQxNiAzNTIsMzk2LjcgMjAxLjUsMjU2ICIvPgogPC9nPgo8L3N2Zz4=");
+	border-bottom: none;
 }
 .iis-next-nav {
-	right: 5%;
+	right: 0;
 	background-position: 65% 50%;
 	background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8Zz4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPHBvbHlnb24gZmlsbD0iI2ZmZmZmZiIgaWQ9InN2Z18xIiBwb2ludHM9IjE2MCwxMTUuNCAxODAuNyw5NiAzNTIsMjU2IDE4MC43LDQxNiAxNjAsMzk2LjcgMzEwLjUsMjU2ICIvPgogPC9nPgo8L3N2Zz4=");
+	border-bottom: none;
 }
 .ideal-image-slider:hover .iis-previous-nav,
 .ideal-image-slider:hover .iis-next-nav { opacity: 0.5; }
@@ -53,8 +55,8 @@
 /* Bullet Navigation */
 .iis-bullet-nav {
 	position: absolute;
-	bottom: 5%;
-	right: 5%;
+	bottom: 0;
+	right: 0;
 	z-index: 15;
 	width: 90%;
 	text-align: right;
@@ -89,26 +91,21 @@
 .iis-has-captions .iis-slide { text-indent: 0; }
 .iis-caption {
 	position: absolute;
-	left: 5%;
-	bottom: 5%;
-	max-width: 90%;
+	left: 0;
+	bottom: 0;
+	width: 100%;
 	z-index: 10;
-	background: #000;
-	background: rgba(0,0,0,0.5);
-	padding: 5px 15px;
-	border-radius: 10px;
-	font: 14px/1.6em "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #fff;
+	background: #fff;
+	background: rgba(255,255,255,0.9);
+	padding: 15px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-.iis-has-bullet-nav .iis-caption { max-width: 42%; }
+.iis-has-bullet-nav .iis-caption { max-width: 100%; }
 .iis-caption .iis-caption-title { font-weight: bold; }
 .iis-caption .iis-caption-content {
-	font-size: 13px;
-	line-height: 1.6em;
-	color: #eee;
+	max-width: 75%
 }
 .iis-caption .iis-caption-content a,
 .iis-caption .iis-caption-content a:visited {
