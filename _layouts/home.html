@@ -7,7 +7,7 @@
   {% include head.html %}
 
   <body id="homepage">
-
+    {% include google-analytics-noscript.html %}
     {% include header.html %}
 
     <main class="page-content" aria-label="Content">
@@ -16,7 +16,7 @@
 
           <section id="homepage-intro" class="brand-bg edge--both">
 
-              <div class="hidden-sm" id="homepage-intro-bg" style="background-image: url('{{ site.baseurl }}/assets/about/japanese-garden-cyan-flip.jpg')">
+              <div class="hidden-sm" id="homepage-intro-bg" style="background-image: url('{{ site.baseurl }}/assets/about/japanese-garden-bw_600x450.jpg')">
                 &nbsp;
               </div>
             <div class="container">
@@ -31,7 +31,6 @@
             </div><!--/container-->
             
           </section>
-        <!-- {{ content }} -->
 
         <!-- {% if site.posts.size > 0 %}
           <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
@@ -118,8 +117,8 @@
               <div class="col-12">
 
                 <h2 class="project-list-heading">{{ page.list_title | default: "Just for fun" }}</h2>
-                <a class="page-link" href="{{ "/creative" | relative_url }}">Creative projects</a>
-
+                <p>A selection of my academic and otherwise non-professional projects.</p>
+                <a class="page-link" href="{{ "/creative" | relative_url }}">Browse my creative projects </a> &#8594;
               </div><!--/col-12-->
             </div><!--/row-->
           </div><!--/container-->

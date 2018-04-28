@@ -24,7 +24,11 @@
         </div>
         <div class="col-6">
             <h2>My role</h2>
-            <div class="role-list">{{ include.role | markdownify }}</div>
+            {% capture list %}
+            {{ include.role | markdownify }} 
+            {% endcapture %}
+            {% include role-list.html list=list %}
+            <!-- <div class="role-list"></div> -->
         </div>
     </div><!--/row-->
 </div><!--/project-attributes-->

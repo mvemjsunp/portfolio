@@ -14,6 +14,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Rebekah David
+subtitle: UX & Interaction Design Portfolio
+
 email: hello@rebekahdavid.com
 description: >- # this means to ignore newlines until "baseurl:"
   portfolio site for Rebekah David | UX & interaction designer
@@ -23,6 +25,7 @@ twitter_username: bekahdavid
 instagram_username: bekahdavid
 linkedin_username: rebekahdavid
 github_username: mvemjsunp
+google_tag_manager: GTM-P256NNJ
 
 # github_username:  jekyll
 

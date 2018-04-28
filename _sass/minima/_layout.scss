@@ -10,6 +10,9 @@
   position: relative;
   #homepage & {
     border-bottom: none;
+    // + * {
+    //   margin-top: $spacing-unit * 3.5;
+    // }
   }
   + * {
     margin-top: $spacing-unit * 2.5;
@@ -174,8 +177,24 @@
 }
 
 .social-media-list {
+  a {
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+  }
   li {
     display: inline-block;
+    .platform-name {
+      display: none;
+    }
+  }
+  &.vertical {
+    li {
+      display: block;
+      .platform-name {
+        display: inline;
+      }
+    }
   }
 }
 
@@ -242,6 +261,9 @@
 .page-content {
   padding: $spacing-unit 0;
   overflow-x: hidden;
+  section {
+    margin-bottom: $spacing-unit * 1.5;
+  }
 }
 
 .page-heading {
@@ -281,7 +303,7 @@
     }
   }
   h3 {
-    margin-bottom: 0;
+    margin: 0;
     @include relative-font-size(1.5);
   }
   a {
@@ -304,7 +326,7 @@
       color: $grey-color-dark;
     }
   }
-  @include media-query($on-palm) {
+  @include media-query($on-laptop) {
     display: block;
     border-top: none;
     border-bottom: 2px solid $grey-color-super-light;
@@ -316,6 +338,12 @@
   flex: 0 1 30%;
   display: flex;
   align-items: center;
+  @include media-query($on-laptop) {
+    flex: none;
+    display: block;
+    max-height: 150px;
+    overflow: hidden;
+  }
 }
 
 .project-list-content {
@@ -384,72 +412,99 @@
   }
   section {
     margin-bottom: $spacing-unit * 1.5;
+    &.light-bg {
+      padding-bottom: $spacing-unit * 1.5;
+    }
   }
 }
 
 #homepage-intro {
   font-family: $heading-font-family;
+  min-height: $spacing-unit * 11;
+
+  .edge--both:before {
+    border-top: 6px solid $accent-color;
+  }
+
+  .accent-circle {
+    position: absolute;
+    right: 10%;
+    top: -8%;
+    width: 75px;
+    height: 75px;
+    background-color: $accent-color;
+    border-radius: 75px;
+  }
   
   @media only screen and (min-width: $breakpoint-large) {
     font-size: $base-font-size * 1.4;
+  }
+  @media only screen and (min-width: 1100px) {
+    margin-top: $spacing-unit / 3;
+  }
+  @media only screen and (min-width: 1400px) {
+    margin-top: $spacing-unit;
+    min-height: 400px;
   }
   h1 {
     color: #fff;
     font-weight: $base-font-weight;
     font-size: $base-font-size * 3.2;
+    line-height: 1.1em;
+    @media only screen and (min-width: 1400px) {
+      font-size: $base-font-size * 3.8;
+    }
   }
   p {
     color: #fff;
     margin-bottom: $spacing-unit;
     font-weight: $base-font-weight; 
     font-size: $base-font-size * 1.2;
+    @media only screen and (min-width: 1400px) {
+      font-size: $base-font-size * 1.4;
+    }
   }
 }
 
 #homepage-intro-bg {
   position: absolute;
-  width: 40%;
-  right: 5px;
-  top: 5px;
-  height: 98%;
+  height: 100%;
   background-position: right;
   // background-image: url(/assets/about/japanese-garden-cyan-flip.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 200px 0 0 200px;
+  border-left: 16px solid $accent-color;
+  top: 0;
+  right: 0;
+  width: 40%;
 }
+
 
 #skills {
   h3 {
-    margin-bottom: 0;
+    margin: 0;
   }
 }
 
 
+h4 {
+  #about-content &,
+  .project-content & {
+    margin-bottom: $spacing-unit / 3;
+    border-left: 6px solid $brand-color;
+    padding-left: $spacing-unit / 3;
+    + p {
+      margin-left: $spacing-unit / 2;
+      margin-bottom: $spacing-unit;
+    }
+  }
+}
 /**
  * Projects
  */
 
 .project-content {
-  // .wrapper {
-  //   max-width: -webkit-calc(#{$content-width} + (#{$spacing-unit} * 6));
-  //   max-width:         calc(#{$content-width} + (#{$spacing-unit} * 6));
-  // }
-
-
-  .sidebar {
-    // position: fixed;
-    position: relative;
-    top: 150px;
-  }
-
-  h4 {
-    margin-bottom: 0;
-    border-left: 6px solid $brand-color;
-    padding-left: $spacing-unit / 3;
-    + p {
-      margin-left: $spacing-unit / 2;
-    }
-  }
 
   h6 {
     color: $accent-color;
@@ -458,7 +513,6 @@
 
   .project {
     position: relative;
-    // padding-left: $spacing-unit;
     .iis-bullet-nav {
       a.iis-bullet-active,
       a:hover { 
@@ -515,6 +569,7 @@
     align-items: top;
     h3 { 
       margin-bottom: 0;
+      margin-top: 0;
     }
     &.last {
       margin-bottom: $spacing-unit;
@@ -625,6 +680,9 @@
 .ideal-image-slider {
   max-width: 85%;
   margin: 1.5em auto;
+  @include media-query($on-laptop) {
+    max-width: 100%;
+  }
   &.full-width {
     max-width: 100%;
   }
@@ -645,19 +703,22 @@
 .other-projects {
   display: flex;
   margin-bottom: $spacing-unit;
+  @include media-query($on-laptop) {
+    display: block;
+  }
   .project-link {
     display: inline-block;
     flex: 1 0; //1 0 25%
     border: 1px solid $grey-color-super-light;
     border-top-width: 16px;
-    padding: $spacing-unit / 4;
+    //padding: $spacing-unit / 4;
     margin: $spacing-unit / 2;
     &:hover {
       border-color: $brand-color-light;
     }
   }
   .project-list-image {
-    height: $spacing-unit * 5; //150px
+    max-height: $spacing-unit * 5; //150px
     flex: none;
     overflow: hidden;
   }
@@ -665,7 +726,7 @@
     flex: unset;
     display: block;
     width: 100%;
-    padding: ($spacing-unit / 2) 0;
+    padding: ($spacing-unit / 4);
     h3 {
       padding: 0 ($spacing-unit / 6);
     }
@@ -696,3 +757,10 @@
   background-size: cover;
   background-position: left;
  }
+
+ #about-content {
+   h2 {
+     margin-top: $spacing-unit * 2;
+   }
+ }
+

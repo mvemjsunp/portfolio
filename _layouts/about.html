@@ -4,30 +4,33 @@
     {% include head.html %}
 
     <body>
+        {% include google-analytics-noscript.html %}
 
         {% include header.html %}
 
-        <div class="row" aria-label="Content">
-            <div id="about-sidebar" class="hidden-sm" style="background-image:url('{{ site.baseurl }}/assets/{{ page.sidebar-image }}')"></div>
-            <div class="container">
+        <div id="about-content">
+            <div class="row" aria-label="Content">
+                <div id="about-sidebar" class="hidden-sm" style="background-image:url('{{ site.baseurl }}/assets/{{ page.sidebar-image }}')"></div>
+                <div class="container">
 
-                <div class="row">
-                    
-                    <div class="col-4">
-                        <img id="self-image" src="{{ site.baseurl }}/assets/{{ page.personal-image }}">                    
-                    </div><!--/col-3-->
+                    <div class="row">
+                        
+                        <div class="col-4">
+                            <img id="self-image" src="{{ site.baseurl }}/assets/{{ page.personal-image }}">                    
+                        </div><!--/col-3-->
 
-                    <div class="col-8">
-                        <main>
-                                {{ content }}
-                        </main>
-                    </div><!--/col-9-->
+                        <div class="col-8">
+                            <main>
+                                    {{ content }}
+                            </main>
+                        </div><!--/col-9-->
 
-                </div>
-            </div><!--/container-->
-        </div><!--/row-->
+                    </div>
+                </div><!--/container-->
+            </div><!--/row-->
+        </div><!--/about-content-->
 
-        {% include footer.html %}
+        {% include footer.html email=false social=false %}
 
     </body> 
 

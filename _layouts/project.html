@@ -4,7 +4,7 @@
     {% include head.html %}
 
     <body>
-
+        {% include google-analytics-noscript.html %}
         {% include header.html %}
 
         <div class="page-content project-content" aria-label="Content">
@@ -31,12 +31,6 @@
 
             <div class="container">
 
-                    
-                    <!-- <div class="col-1 hidden-sm">
-                        <div class="sidebar">
-                            <img id="project-image" src="{{ site.baseurl }}/assets/{{ site.image_path }}/{{ page.image }}">                    
-                        </div>
-                    </div> -->
                 <main class="project">
                     <section id="contact-content">
                         
@@ -93,12 +87,6 @@
         {% for script in page.iis_slider_scripts %}
                 {{ script }}
         {% endfor %}
-        <!-- Sliders on indexes -->
-        <!-- {% for post in paginator.posts %}
-            {% for script in post.iis_slider_scripts %}
-                {{ script }}
-            {% endfor %}
-        {% endfor %} -->
 
     </body>
 
