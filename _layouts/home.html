@@ -32,28 +32,6 @@
             
           </section>
 
-        <!-- {% if site.posts.size > 0 %}
-          <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-          <ul class="post-list">
-            {% for post in site.posts %}
-            <li>
-              {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-              <span class="post-meta">{{ post.date | date: date_format }}</span>
-              <h3>
-                <a class="post-link" href="{{ post.url | relative_url }}">
-                  {{ post.title | escape }}
-                </a>
-              </h3>
-              {% if site.show_excerpts %}
-                {{ post.excerpt }}
-              {% endif %}
-            </li>
-            {% endfor %}
-          </ul>
-
-          <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-        {% endif %} -->
-
         {% if site.projects.size > 0 %}
         <section>
           <div class="container">
@@ -65,8 +43,6 @@
                   {% for project in site.projects %}
                   <li>
                     <a class="project-link" href="{{ project.url | relative_url }}">
-                      <!-- {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %} -->
-                      <!-- <span class="post-meta">{{ project.date | date: date_format }}</span> -->
                       <div class="project-list-image">
                           <img src="{{ site.baseurl }}/assets/{{ site.image_path }}/{{ project.image }}">
                       </div>
@@ -74,10 +50,8 @@
                         <h3>
                             {{ project.title | escape }}
                         </h3>
-                        <span class="post-meta">{{ project.summary }}</span> 
-                        <!-- {% if site.show_excerpts %}
-                          {{ post.excerpt }}
-                        {% endif %} -->
+                        <div class="post-meta">{{ project.summary }}</div> 
+                        <div class="read-more-link">Read case study ></div>
                       </div>
                     </a>
                   </li>

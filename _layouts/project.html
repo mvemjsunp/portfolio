@@ -79,14 +79,16 @@
 
         {% include footer.html %}
 
-        <script src="{{ "/assets/js/ideal-image-slider/ideal-image-slider.min.js" | relative_url }}"></script>
-        <script src="{{ "/assets/js/ideal-image-slider/extensions/bullet-nav/iis-bullet-nav.js" | relative_url }}"></script>
-        <script src="{{ "/assets/js/ideal-image-slider/extensions/captions/iis-captions.js" | relative_url }}"></script>
+        {% if page.iis_slider_active %}
+            <script src="{{ "/assets/js/ideal-image-slider/ideal-image-slider.min.js" | relative_url }}"></script>
+            <script src="{{ "/assets/js/ideal-image-slider/extensions/bullet-nav/iis-bullet-nav.js" | relative_url }}"></script>
+            <script src="{{ "/assets/js/ideal-image-slider/extensions/captions/iis-captions.js" | relative_url }}"></script>
 
-        <!-- Sliders on pages -->
-        {% for script in page.iis_slider_scripts %}
+            <!-- Sliders on pages -->
+            {% for script in page.iis_slider_scripts %}
                 {{ script }}
-        {% endfor %}
+            {% endfor %}
+        {% endif %}
 
     </body>
 

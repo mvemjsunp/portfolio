@@ -14,9 +14,7 @@ For the past 4.5 years, I’ve been working as a “UX team-of-one”/full-stack
 
 I love **solving complex interaction problems** and designing software solutions that **help users do their jobs better**.  During any project, I focus on understanding who our users are, what they want or need, and removing obstacles between them and their goals.
 
-Now I am looking for new opportunities to focus even more intensely on UX design, work collaboratively with different types of teams, and generally hone my skills.  I would love to join a moderate to large in-house team with research and design roles (hopefully still working closely with engineering), so that I have peers to continually learn from and collaborate with to build successful products.
-
-I want to work on **challenging, high-impact projects** in a design-mature organization working on software for **enterprise/B2B, technical, or scientific users**, as part of a diverse team empowered to use design thinking to solve complex problems.
+I am seeking new opportunities to focus even more intensely on UX design and to work collaboratively with different types of teams.  I am looking for **challenging, in-depth projects** in a design-mature organization, working on software for **enterprise/B2B, technical, or scientific users**, embedded in a diverse team empowered to use design thinking to solve complex problems.
 
 
 ## More about me

@@ -20,14 +20,12 @@ email: hello@rebekahdavid.com
 description: >- # this means to ignore newlines until "baseurl:"
   portfolio site for Rebekah David | UX & interaction designer
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: http://rebekahdavid.com # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: bekahdavid
 instagram_username: bekahdavid
 linkedin_username: rebekahdavid
 github_username: mvemjsunp
 google_tag_manager: GTM-P256NNJ
-
-# github_username:  jekyll
 
 # Build settings
 markdown: kramdown
@@ -41,19 +39,19 @@ header_pages:
 # theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
-
-iis_slider_array: []
+  # - jekyll-seo-tag
 
 collections:
   projects:
     output: true
     permalink: /projects/:path/
   skills:
-    output: true
+    output: false
   creative:
     output: true
     permalink: /creative/:path/
+
+# iis_slider_array: []
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

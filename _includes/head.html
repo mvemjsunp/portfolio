@@ -2,9 +2,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} | {{site.title }} | {{ site.subtitle }}</title>
-  <link rel="shortcut icon" href="{{ "/assets/favicon.ico" | relative_url }}" type="image/x-icon" />
-  {% seo %}
+  <meta property="og:url" content="http://rebekahdavid.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{site.title }} | {{ site.subtitle }}" />
+  <meta property="og:image" content="{{ site.url }}/assets/patternlibrary/pattern-library-6_960x830.png" />
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{site.title }} | {{ site.subtitle }}</title>
+  <link rel="icon" href="{{ "/assets/favicon.ico" | relative_url }}" type="image/x-icon" />
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="stylesheet" href="https://use.typekit.net/nth2kdj.css">
   <link rel="stylesheet" href="{{ "/assets/js/ideal-image-slider/ideal-image-slider.css" | relative_url }}">

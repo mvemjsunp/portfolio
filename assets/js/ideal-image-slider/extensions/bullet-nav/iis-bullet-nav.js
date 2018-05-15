@@ -26,8 +26,6 @@
 	};
 
 	IIS.Slider.prototype.addBulletNav = function() {
-		console.log(this);
-		console.log(this._attributes);
 		IIS._addClass(this._attributes.container, 'iis-has-bullet-nav');
 
 		// Create bullet nav

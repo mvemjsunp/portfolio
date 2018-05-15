@@ -76,7 +76,7 @@ module Jekyll
           slider_script += "#{slider_id}.addCaptions();" if @slider_captions
           slider_script += "#{slider_id}.start();"
           slider_script += "</script>"
-          slider_array = context.environments.first['site']['iis_slider_array']
+          slider_array = context.environments.first['page']['iis_slider_array']
           slider_array << slider_script
           context.environments.first['page']['iis_slider_scripts'] = slider_array
           # render the markdown, then remove all <p></p> tags from the html
