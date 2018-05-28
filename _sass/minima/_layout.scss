@@ -691,7 +691,7 @@ h4 {
  
 .project-image-inline,
 .ideal-image-slider {
-  max-width: 85%;
+  //max-width: 85%;
   margin: 1.5em auto;
   @include media-query($on-laptop) {
     max-width: 100%;
