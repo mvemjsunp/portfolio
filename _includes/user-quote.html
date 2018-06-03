@@ -1,3 +1,15 @@
+{% if include.image %}
+<div class="image-quote">
+    {% unless include.reverse %}
+    <img src="/assets/{{ include.image }}" alt="{{ include.description }}">
+    {% endunless %}
+{% endif %}
 <blockquote>
     <p>{{ include.content }}</p>
 </blockquote>
+{% if include.reverse %}
+<img src="/assets/{{ include.image }}" alt="{{ include.description }}">
+{% endif %}
+{% if include.image %}
+</div>
+{% endif %}

@@ -1,28 +1,24 @@
 <div id="project-intro">
-    <div class="row">
-        <div class="col-12">
             {{ include.intro }}
-        </div><!--/col-12-->
-    </div><!--/row-->
 </div>
 
 <div id="project-attributes">
     <div class="row row-flex">
-        <div class="col-6">
+        <div>
             <h2>Goal</h2>
             <p>{{ include.goal }}</p>
         </div>
-        <div class="col-6">
+        <div>
             <h2>Overview</h2>
             <p>{{ include.overview | markdownify }}</p>
         </div>
     </div><!--/row-->
-    <div class="row">
-        <div class="col-6">
+    <div class="row row-flex">
+        <div>
             <h2>Team</h2>
             <p>{{ include.team }}</p>
         </div>
-        <div class="col-6">
+        <div>
             <h2>My role</h2>
             {% capture list %}
             {{ include.role | markdownify }} 
