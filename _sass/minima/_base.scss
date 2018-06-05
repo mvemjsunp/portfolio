@@ -230,7 +230,8 @@ blockquote {
     border-left: none;
     border-bottom: none;
   }
-  p + & {
+  p + &, 
+  ul + & {
     margin-top: $spacing-unit;
     padding-top: $spacing-unit;
     border-top: 6px solid $grey-color-super-light;
