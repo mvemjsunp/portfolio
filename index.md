@@ -5,4 +5,4 @@
 layout: home
 # title: Work
 ---
-Hi there! I'm a UX designer who specializes in designing interfaces & experiences for business and technical users.  I excel in collaborating with product teams to understand user needs, solve complex interaction problems, and shepherd solutions from concept to completion.
+Hi there! I'm a UX designer who specializes in *designing interfaces & experiences for business and technical users*.  I excel in collaborating with product teams to understand user needs, solve complex interaction problems, and shepherd solutions from concept to completion.

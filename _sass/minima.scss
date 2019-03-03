@@ -170,14 +170,14 @@ $breakpoint-large: 60em; // 960px
 
 .brand-bg {
   background-color: $brand-color-dark;
-  &.edge--both {
-    &:before {
-      border-top: ($spacing-unit / 6) solid $brand-color-light;
-    }
-    &:after {
-      border-bottom: ($spacing-unit / 2) solid $brand-color;
-    }
-  }
+  // &.edge--both {
+  //   &:before {
+  //     border-top: ($spacing-unit / 6) solid $brand-color-light;
+  //   }
+  //   &:after {
+  //     border-bottom: ($spacing-unit / 2) solid $brand-color;
+  //   }
+  // }
 }
 
 .light-bg {
