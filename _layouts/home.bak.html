@@ -32,7 +32,37 @@
             
           </section>
 
+        {% if site.projects.size > 0 %}
+        <section>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
 
+                <h2 class="project-list-heading" id="work">{{ page.list_title | default: "Projects" }}</h2>
+                <ul class="project-list">
+                  {% for project in site.projects %}
+                  <li>
+                    <a class="project-link" href="{{ project.url | relative_url }}">
+                      <div class="project-list-image">
+                          <img src="{{ site.baseurl }}/assets/{{ site.image_path }}/{{ project.image }}">
+                      </div>
+                      <div class="project-list-content">
+                        <h3>
+                            {{ project.title | escape }}
+                        </h3>
+                        <div class="post-meta">{{ project.summary }}</div> 
+                        <div class="read-more-link">Read case study ></div>
+                      </div>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+
+              </div><!--/col-->
+            </div><!--/row-->
+          </div><!--/container-->
+        </section>
+        {% endif %}
 
         <section id="skills">
           <div class="container">
@@ -60,8 +90,9 @@
             <div class="row">
               <div class="col-12">
 
-                <h2 class="project-list-heading">{{ page.list_title | default: "More about me" }}</h2>
-                <a class="page-link" href="{{ "/about" | relative_url }}">Find out more...</a> &#8594;
+                <h2 class="project-list-heading">{{ page.list_title | default: "Just for fun" }}</h2>
+                <p>A selection of my academic and otherwise non-professional projects.</p>
+                <a class="page-link" href="{{ "/creative" | relative_url }}">Browse my creative projects </a> &#8594;
               </div><!--/col-12-->
             </div><!--/row-->
           </div><!--/container-->

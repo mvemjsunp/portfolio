@@ -21,8 +21,8 @@
         <div class="trigger">
           {% assign current = page.url | downcase | split: '/' %}
           
-          <a class="page-link{% if page.layout == 'project' or page.layout == 'home' %} active{% endif %}" href="{{ "/" | relative_url }}">Work</a>
-          <a class="page-link{% if page.layout == 'creative' or page.layout == 'creative-index' %} active{% endif %}" href="{{ "/creative" | relative_url }}">Creative</a>
+          <!-- <a class="page-link{% if page.layout == 'project' or page.layout == 'home' %} active{% endif %}" href="{{ "/" | relative_url }}">Work</a>
+          <a class="page-link{% if page.layout == 'creative' or page.layout == 'creative-index' %} active{% endif %}" href="{{ "/creative" | relative_url }}">Creative</a> -->
           <a class="page-link{% if page.layout == 'about' %} active{% endif %}" href="{{ "/about" | relative_url }}">About</a>
           <!-- {% for path in page_paths %}
             {% assign my_page = site.pages | where: "path", path | first %}

@@ -10,11 +10,11 @@ personal-image: about/disney-bekah-bear2.jpg
 
 I’m a resourceful, systems-thinking (yet detail-obsessive) UX designer skilled at sketching, wireframing, user flows, and developing and enforcing design standards using pattern libraries and other tools.  I am experienced at collaborating with developers, stakeholders, and users to build truly successful and delightful products.  
 
-For the past 4.5 years, I’ve been working as a “UX team-of-one”/full-stack designer at a boutique environmental data management software company.  There, I have worn many hats (UI designer, front-end developer, copywriter, manager), but during this time I’ve become the most passionate about my work in UX design.
+In my 7+ years of experience, I have worn many hats (UI designer, front-end developer, copywriter, manager), but during this time I’ve become the most passionate about my work in UX design.
 
 I love **solving complex interaction problems** and designing software solutions that **help users do their jobs better**.  During any project, I focus on understanding who our users are, what they want or need, and removing obstacles between them and their goals.
 
-I am seeking new opportunities to focus even more intensely on UX design and to work collaboratively with different types of teams.  I am looking for **challenging, in-depth projects** in a design-mature organization, working on software for **enterprise/B2B, technical, or scientific users**, embedded in a diverse team empowered to use design thinking to solve complex problems.
+I am currently working on UX design for internal security products at <a href="https://smile.amazon.com" target="_blank">Amazon</a>.
 
 
 ## More about me
@@ -34,7 +34,6 @@ In my spare time, I like playing <a href="https://stardewvalley.net/" target="_b
 
 #### Consistency eases complexity (or, &ldquo;Consistency > Simplicity&rdquo;).
   Technical and business users don't necessarily want their complex software to become simple. It's important for new users to get up and running quickly, but <a href="http://a.co/eD5Z7P4" target="_blank">as Kathy Sierra says</a>, once we get them beyond the inevitable initial &ldquo;Suck Zone&rdquo;, we have to keep them moving &ldquo;up and to the right&rdquo;—that is, to provide them with the confidence and the desire to continue using our product to achieve the results they want.  By being deliberate and consistent with the design, organization, and availability of the tools we offer, we can remove unnecessary obstacles and smooth this path for our users, despite the overall complexity of our product.
-
 
 ## Skills
 
@@ -65,8 +64,10 @@ In my spare time, I like playing <a href="https://stardewvalley.net/" target="_b
 - Photoshop
 - Sketch
 - Sublime Text
+- Visual Studio Code
 - Xmind
 - Zeplin
+- Tableau
 - HTML
 - CSS
 - ColdFusion
